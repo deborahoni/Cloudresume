@@ -1,9 +1,7 @@
 name: Cloud-resume-Github-actions
 on:
-push:
-  branches:
-    - master
-
+  push:
+    branch: [main]
 jobs:
   deploy:
     name: Deploy to AWS S3
