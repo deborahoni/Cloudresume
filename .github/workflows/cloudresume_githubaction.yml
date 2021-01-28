@@ -1,14 +1,12 @@
 name: Cloud-resume-Github-actions
 on:
-push:
-  branches:
-    - master
-
+  push:
+    branch: [main]
 jobs:
   deploy:
-  name: Deploy to AWS S3
-   runs-on: ubuntu-latest
-   steps:
+    name: Deploy to AWS S3
+    runs-on: ubuntu-latest
+    steps:
       - name: Code checkout 
         uses: actions/checkout@v2
 
@@ -21,6 +19,5 @@ jobs:
 
       - name: Copy files to the website with the AWS CLI
         run: aws s3 sync . s3://deborahoni.com
-
      
       
