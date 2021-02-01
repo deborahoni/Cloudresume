@@ -1,8 +1,10 @@
 $.ajax({
-   url: "https://api.mybytesni.com/visitor",
+   url: "https://api.deborahoni.com/visitor",
    type: "POST",
   success: function(result) {
-            console.log(result);
+        $("#count").text(result.visits);
+        $("#uv").text(result.unique_visits);
+
           },
   error: function(error) {
          console.log(error);
